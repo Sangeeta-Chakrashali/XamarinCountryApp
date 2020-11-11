@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:CountryMobileApp.Views.Common"
+             x:Class="CountryMobileApp.Views.CountryListView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition>
+                        <ColumnDefinition.Width>
+                            <OnIdiom x:TypeArguments="GridLength" Phone="0" Tablet="*" >
+                            </OnIdiom>
+                        </ColumnDefinition.Width>
+                    </ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="ItemsListView" ItemsSource="{Binding Countries}" Margin="0" 
+                          HasUnevenRows="true"
+                          CachingStrategy="RecycleElement" ItemTapped="CountryListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="0" Margin="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                                        <ColumnDefinition Width="25"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <ffimageloadingsvg:SvgCachedImage LoadingPlaceholder="ImageLoader.png" Grid.RowSpan="2" Source="{Binding Flag}" HeightRequest="50" Aspect="AspectFill"></ffimageloadingsvg:SvgCachedImage>
+                                    <Label Grid.Column="1" Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"></Label>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding CapitalAndCurrency}" FontSize="Small"></Label>
+                                    <ffimageloading:CachedImage Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="2" Source="arrow.png" HeightRequest="15" WidthRequest="15" Aspect="AspectFit"></ffimageloading:CachedImage>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <views:DetailsView Grid.Column="1" Model="{Binding CountryDetails}"></views:DetailsView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

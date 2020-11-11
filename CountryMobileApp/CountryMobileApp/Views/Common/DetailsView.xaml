@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CountryMobileApp.Views.Common.DetailsView"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms">
+    <ContentView.Content>
+        <ScrollView>
+            <StackLayout>
+                <ffimageloadingsvg:SvgCachedImage x:Name="Flag" LoadingPlaceholder="ImageLoader.png" HeightRequest="300" Aspect="Fill"></ffimageloadingsvg:SvgCachedImage>
+                <Label x:Name="CapitalAndCurrency" HorizontalOptions="Center" FontSize="Medium"></Label>
+                <StackLayout Padding="20">
+                    <Label x:Name="Name" HorizontalOptions="Start" FontSize="Small"></Label>
+                    <Label x:Name="TopLevelDomain" FontSize="Small"></Label>
+                    <Label x:Name="Alpha2Code" FontSize="Small"></Label>
+                    <Label x:Name="Alpha3Code" FontSize="Small"></Label>
+                    <Label x:Name="CallingCodes" FontSize="Small"></Label>
+                    <Label x:Name="AltSpellings" FontSize="Small"></Label>
+                    <Label x:Name="Region" FontSize="Small"></Label>
+                    <Label x:Name="Subregion" FontSize="Small"></Label>
+                    <Label x:Name="Population" FontSize="Small"></Label>
+                    <Label x:Name="Latlng" FontSize="Small"></Label>
+                    <Label x:Name="Demonym" FontSize="Small"></Label>
+                    <Label x:Name="Area" FontSize="Small"></Label>
+                    <Label x:Name="Gini" FontSize="Small"></Label>
+                    <Label x:Name="Timezones" FontSize="Small"></Label>
+                    <Label x:Name="Borders" FontSize="Small"></Label>
+                    <Label x:Name="NativeName" FontSize="Small"></Label>
+                    <Label x:Name="NumericCode" FontSize="Small"></Label>
+                    <Label x:Name="Cioc" FontSize="Small"></Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

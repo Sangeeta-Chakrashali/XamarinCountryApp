@@ -3,3 +3,8 @@
 ################################################################################
 
 /CountryMobileApp/CountryMobileApp/obj/Debug/netstandard2.0
+/CountryMobileApp/CountryMobileApp.Android/bin/Debug
+/CountryMobileApp/CountryMobileApp.Android/obj
+/CountryMobileApp/CountryMobileApp.iOS/bin/iPhoneSimulator/Debug
+/CountryMobileApp/CountryMobileApp.iOS/obj
+/CountryMobileApp/.vs/CountryMobileApp/xs
